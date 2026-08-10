@@ -1,69 +1,69 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
+import IdCardDisplay from "@/components/IdCardDisplay";
 
 export default function Home() {
+  const [idCardData, setIdCardData] = useState({
+    name: "",
+    role: "",
+    builderTitle: "",
+    image: null,
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setIdCardData((prev) => ({ ...prev, [id]: value }));
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col flex-1 items-center justify-start bg-green-800 font-serif p-8">
+      <div className="relative w-full border-4 border-white rounded-2xl p-8 min-h-[90vh]">
+        <div className="absolute -top-8 left-8 bg-green-800 px-4">
+          <div className="text-yellow-400">
+            <h1 className="text-4xl font-bold leading-tight">HACKER</h1>
+            <div className="relative my-1">
+              <span className="text-2xl font-bold bg-pink-500 text-white px-2 py-0.5 rounded-md inline-block">
+                गोवा
+              </span>
+            </div>
+            <h1 className="text-4xl font-bold leading-tight">HOUSE</h1>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        <main className="mt-12 w-full">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            {/* Left Column: Form */}
+            <div className="flex flex-col gap-8 text-yellow-400">
+              <div className="w-40 h-40 bg-white/10 rounded-lg flex items-center justify-center border-2 border-dashed border-white/20 cursor-pointer hover:bg-white/20 transition-colors">
+                <span className="text-white/40 text-sm">Upload Image</span>
+              </div>
+              <div className="w-full max-w-md space-y-4">
+                <div>
+                  <label htmlFor="name" className="block mb-1.5 text-sm font-medium text-yellow-300">Name</label>
+                  <input type="text" id="name" value={idCardData.name} onChange={handleInputChange} className="w-full p-2.5 rounded-md bg-white/10 border border-white/20 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all" placeholder="Enter your name" />
+                </div>
+                <div>
+                  <label htmlFor="role" className="block mb-1.5 text-sm font-medium text-yellow-300">Stack / Role</label>
+                  <input type="text" id="role" value={idCardData.role} onChange={handleInputChange} className="w-full p-2.5 rounded-md bg-white/10 border border-white/20 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all" placeholder="e.g., Full Stack Developer" />
+                </div>
+                <div>
+                  <label htmlFor="builderTitle" className="block mb-1.5 text-sm font-medium text-yellow-300">Builder Title</label>
+                  <input type="text" id="builderTitle" value={idCardData.builderTitle} onChange={handleInputChange} className="w-full p-2.5 rounded-md bg-white/10 border border-white/20 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all" placeholder="e.g., The Architect" />
+                </div>
+                <div className="pt-4">
+                  <button className="bg-pink-500 text-white font-bold py-2.5 px-6 rounded-md hover:bg-pink-600 active:scale-95 transition-all w-full md:w-auto">
+                    Generate ID Card
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: ID Card Preview */}
+            <div className="flex items-center justify-center">
+              <IdCardDisplay idCardData={idCardData} />
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
