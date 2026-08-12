@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="public/icon.png" alt="Hacker House Goa ID Card Generator" width="128" />
+</p>
 
-## Getting Started
+# Hacker House Goa 2026 - ID Card Generator
 
-First, run the development server:
+A fun and simple web application for attendees of Hacker House Goa 2026 to generate their personalized builder ID cards.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Description
+
+This project allows users to create a custom ID card by providing their name, role, a builder title, and a profile picture. The generated card can then be downloaded as a high-quality PNG image or shared directly on social media. It's built with Next.js and Tailwind CSS, and it's fully responsive for both desktop and mobile devices.
+
+## ✨ Features
+
+-   **Personalized ID Cards**: Add your name, role, and a unique builder title.
+-   **Profile Photo Upload**: Easily upload and preview your profile picture.
+-   **Input Validation**: Character limits on text fields and name field accepts only letters.
+-   **QR Code Generation**: A unique QR code is generated with your details.
+-   **Random ID Number**: Each card gets a unique random ID number.
+-   **Responsive Design**: Looks great on any device, from mobile phones to desktops.
+-   **Download as PNG**: Save your generated ID card as a high-quality PNG image.
+-   **Share on X (Twitter)**: Uses the Web Share API to share your card directly to X or other apps.
+-   **Fun Animations**: A confetti animation plays when you generate your card.
+
+## 🛠️ Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your computer.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/dbaidya811/a-photo-frame-generator.git
+    ```
+
+2.  **Navigate to the project directory:**
+    ```sh
+    cd a-photo-frame-generator
+    ```
+
+3.  **Install the dependencies:**
+    ```sh
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```sh
+    npm run dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 💻 How to Use
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  Fill in the form fields: **Name**, **Stack / Role**, and **Builder Title**.
+2.  Click on the profile photo area to upload an image from your device.
+3.  Click the **"Generate ID Card"** button.
+4.  Your personalized ID card will be displayed.
+5.  Click **"Download"** to save the card as a PNG file or **"Share on X"** to share it.
 
-## Learn More
+## 🏗️ Built With
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   [Next.js](https://nextjs.org/) - The React Framework for Production.
+-   [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+-   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework.
+-   [html-to-image](https://github.com/bubkoo/html-to-image) - A library to generate an image from a DOM node.

@@ -34,13 +34,13 @@ function IdCardDisplay({ idCardData }) {
         className="absolute top-0 left-0 w-full h-[60%] rounded-t-2xl overflow-hidden"
         style={{ clipPath: 'ellipse(100% 100% at 50% 0%)' }}
       >
-        <Image src="/icard.png" alt="ID Card Background" layout="fill" className="object-cover object-top" />
+        <img src="/icard.png" alt="ID Card Background" className="w-full h-full object-cover object-top" />
       </div>
       <div className="absolute inset-0 text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13.5px]">
         {qrCodeUrl && (
           <div className="absolute top-[1.5em] left-[1.5em] w-[5em] flex flex-col items-center">
-            <div className="w-full h-[5em] bg-white p-1 rounded-md shadow-lg">
-              <Image src={qrCodeUrl} alt="QR Code" width={64} height={64} className="w-full h-full" />
+            <div className="w-full h-[5em] bg-white p-1 rounded-md shadow-lg text-black flex items-center justify-center">
+              <img src={qrCodeUrl} alt="QR Code" className="w-full h-full" />
             </div>
             <span className="text-white font-bold text-[0.8em] mt-1">Scan QR Code</span>
           </div>
@@ -52,13 +52,10 @@ function IdCardDisplay({ idCardData }) {
           {/* Profile Photo */}
           <div className="relative w-[10.66em] h-[10.66em] mt-[calc(4.83em+20px)] rounded-full shadow-lg z-10">
             {idCardData?.photoUrl && (
-              <Image
+              <img
                 src={idCardData.photoUrl}
                 alt="User Photo"
-                fill
-                sizes="128px"
-                priority
-                className="rounded-full object-cover object-top border-[0.33em] border-black"
+                className="w-full h-full rounded-full object-cover object-top border-[0.33em] border-black"
               />
             )}
           </div>
